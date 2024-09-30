@@ -5,9 +5,9 @@
     box-sizing: border-box;
 }
 :root {
-    --light-green: #27a305;
-    --dark-green: #176301;
-    --purple: #8a01d3;
+    --light-green: #8a01d3;
+    --color-2: #176301;
+    --color-3: #8a01d3;
 
     }
 
@@ -38,7 +38,7 @@ p {
     font-weight: 300px;
     letter-spacing: .05rem;
 }
-.section-title {
+.mission-title {
     font-size: 4rem;
     font-weight: 400;
     color: black;
@@ -264,25 +264,25 @@ p {
 /*End hero section*/
 
 /*Start services section*/
-#services .services {
+#mission .mission {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 100px 0;
 }
-#services .service-top {
+#mission .mission-top {
     max-width: 500px;
     margin: 0 auto;     
 }
-#services .service-bottom {
+#mission .mission-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 50px;
 }
-#services .service-item {
+#mission .mission-item {
     flex-basis: 80%;
     display: flex;
     flex-direction: column;
@@ -297,7 +297,7 @@ p {
     z-index: 1;
     overflow: hidden;
 }
-#services .service-item::after {
+#mission .mission-item::after {
     content: '';
     position: absolute;
     top: 0;
@@ -313,13 +313,13 @@ p {
     width: 80px;
     margin-bottom: 20px;
 }
-#services .service-item h2 {
+#mission .mission-item h2 {
     font-size: 2rem;
     color: white;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-#services .service-item p {
+#mission .mission-item p {
     color: white;
     text-align: left;
     line-height: 3rem;
@@ -597,7 +597,7 @@ p {
     /*End hero section*/
 
     /*services section*/
-    #services .service-bottom .service-item {
+    #mission .mission-bottom .mission-item {
         flex-basis: 45%;
         margin: 2.5%;
     }
@@ -712,7 +712,7 @@ p {
         top: 30px;  
         left: -30px;
     }
-    #services .service-bottom .service-item {
+    #mission .mission-bottom .mission-item {
         flex-basis: 22%;
         margin: 1%;
     }
