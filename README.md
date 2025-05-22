@@ -25,6 +25,8 @@ Sacred Ministry Info
 
 💾 JS Folder Is JavaScript Section
 
+💾 SVG Folder Has SVG Files Of Logo
+
 💃 Tests Folder is test section, or things am testing
 
 🛎️Helpful Links For Setting Up Domain & Adding Images & Files👇 🎥 Github Basics: https://youtu.be/iv8rSLsi1xo & https://youtu.be/v_1iqtOnUMg
@@ -36,4 +38,3 @@ Sacred Ministry Info
 
 💻 To Watch The Site Being Built 👉🏽 https://geoffstengel.github.io/scm/
 
- 
