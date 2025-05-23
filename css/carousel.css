@@ -172,7 +172,7 @@ h3 {
   color: white;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .popup-close:hover {
@@ -208,7 +208,7 @@ h3 {
   width: 100%;
   height: 180px;
   padding: 6px 12px;
-  background-image: url("https://iili.io/3QhBJ7p.jpg");
+  background-image: url("/logo/scm_logo_high_res_og_img.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 15px;
@@ -238,7 +238,8 @@ ul.groene-vinkjes li::before {
   margin-right: 8px;
 }
 
-/* Projecs page */
+
+/*Pillars Page START*/
 
 .projects,
 ul,
@@ -286,8 +287,8 @@ a:hover {
   color: #555;
   line-height: 1.2;
 }
-
-/* contact form */
+/*Pillars Page END*/
+/* contact form START*/
 #contact-form {
   max-width: 500px;
   color: rgb(243, 247, 250);
@@ -344,6 +345,83 @@ strong {
 figcaption {
   text-align: center;
   padding: 5px;
+}
+
+/**/
+#popup-card3{
+    background-color: #cfcdcd;
+}
+.pillar_page_logo{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    justify-self: center;
+    align-self: center;
+}
+.pillars_card_text_ul{
+   background-color: #cfcdcd;
+   text-align: center;
+ 
+}
+.pillars_card_text_ul li{
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #cfcece;
+}
+.pillars_card_text_ul p{
+    font-size: 14px;
+    margin-top: 2px;
+    text-shadow: 1px 1px 1px #cfcece;
+}
+.pillars_card_text_ul li{
+    text-align: center;
+}
+.integrity_title, p.integrity_text {
+    color: purple;
+}
+
+.community_title,  p.community_text{
+    color:rgb(96, 0, 128);
+}
+.responsibility_title, p.responsibility_text{
+    color:rgb(98, 0, 173);
+}
+.change_title, p.change_text{
+    color:rgb(2, 130, 81);
+}
+.abundance_title, p.abundance_text{
+    color:rgb(235, 202, 17);
+}
+.wealth_title, p.wealth_text{
+    color:rgb(235, 141, 17);
+}
+.gratitude_title, p.gratitude_text{
+    color:rgb(235, 39, 17);
+}
+/**/
+
+.social_media_grid{
+    display: grid;
+    width: 60px;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin-top: 15px;  
+}
+
+.scm_contact_info_grid{
+    display: grid;
+    width: 300px;
+    margin: 0 auto;
+    margin-left: 0;
+    grid-template-columns: 200px;
+    grid-template-rows: 30px 25px 25px 25px 50px;
+    column-gap: 5px;
+}
+
+/*social media logos*/
+.fb_logo, .instagram_logo{
+    width: 20px;
+    height: 20px;
 }
 
 @media (max-width: 1024px) {

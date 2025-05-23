@@ -7,7 +7,7 @@ Sacred Ministry Info
 
 💡 Steps On How To Get Around Folders
 
-🏺 "SCM" Folder Has All Code For Juce Website Inside.
+🏺 "SCM" Folder Has All Code For SCM Website Inside.
 
 ✔️ Signup For Github To Interact, Upload, Comment etc.. With Project
 
@@ -27,7 +27,11 @@ Sacred Ministry Info
 
 💾 SVG Folder Has SVG Files Of Logo
 
+💾 Logo Folder Has logos & .ai file for Illustrator
+
 💃 Tests Folder is test section, or things am testing
+
+🦉 Test Folder has a standard website layout called layout_02 as backup website    
 
 🛎️Helpful Links For Setting Up Domain & Adding Images & Files👇 🎥 Github Basics: https://youtu.be/iv8rSLsi1xo & https://youtu.be/v_1iqtOnUMg
 
