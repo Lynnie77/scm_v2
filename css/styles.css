@@ -158,14 +158,16 @@ header{
 /*NAV BAR AND HEADER END*/
 
 .scene {
-  perspective: 1200px;
+  perspective: 5200px;
   width: 80%;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
+
 
 .carousel {
   position: relative;
@@ -529,27 +531,15 @@ figcaption {
     height: 20px;
 }
 
+
+
 /*Carousel Arrows Start*/
-/*
-.carousel-controls {
-  position: absolute;
-  top: 115%;
-  width: 200px;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 40px;
-  z-index: 900;
-  pointer-events: auto;
-  margin: 0 auto;
-}*/
 .carousel-controls {
   display: flex;
   width: 200px;
   padding: 0 40px;
   margin: 0 auto;
 }
-
 
 .carousel-btn {
   font-size: 1.5rem;
