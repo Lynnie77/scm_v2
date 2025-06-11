@@ -29,14 +29,15 @@ function setCardPositions() {
 }
 
 function updateCardSize() {
+  const { rotationStep, radius } = getResponsiveSettings();
   cards.forEach((card, i) => {
-    if (i === currentCardIndex) {
-      card.style.transform += " scale(1.2)";
-      card.style.zIndex = "1";
-    } else {
-      card.style.transform = card.style.transform.replace(" scale(1.2)", "");
-      card.style.zIndex = "0";
-    }
+    const rotateY = i * rotationStep;
+    const angleRad = (rotateY * Math.PI) / 180;
+    const x = Math.sin(angleRad) * radius;
+    const z = Math.cos(angleRad) * radius;
+    const scale = (i === currentCardIndex) ? 1.2 : 1;
+    card.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg) scale(${scale})`;
+    card.style.zIndex = i === currentCardIndex ? "1" : "0";
   });
 }
 
@@ -51,7 +52,7 @@ function startRotation() {
   rotationInterval = setInterval(() => {
     currentCardIndex = (currentCardIndex + 1) % totalCards;
     setCardPositions();
-  }, 1400);
+  }, 1600);
 }
 
 function stopRotation() {
@@ -100,6 +101,22 @@ cards.forEach((card) => {
     showPopup(cardId);
   });
 });
+
+
+//Next BTNS For Carousel START
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentCardIndex = (currentCardIndex - 1 + totalCards) % totalCards;
+  setCardPositions();  // Recalculate position and rotation
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentCardIndex = (currentCardIndex + 1) % totalCards;
+  setCardPositions();  // Recalculate position and rotation
+});
+//Next BTNS For Carousel END
+
+
+
 
 // Init + resize support
 setCardPositions();

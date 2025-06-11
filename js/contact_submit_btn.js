@@ -1,12 +1,22 @@
-  function sendEmail() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
 
-    var subject = "Contact Form Submission";
-    var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    var emailLink = "mailto:sacredconnectionsministry@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-    document.getElementById("contact-form").action = emailLink;
-  }
+    if (!name || !email || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const subject = "Contact Form Submission";
+    const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+    const mailtoLink = `mailto:sacredconnectionsministry@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+  });
+});

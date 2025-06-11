@@ -49,6 +49,43 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
+/*ADDED NAV BAR AND HEADER START*/
+header{
+  position: absolute;
+  top: -40%;
+  left: 55%;
+}
+
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-active {
+  display: flex;
+}
+/*NAV BAR AND HEADER END*/
+
 .scene {
   perspective: 1200px;
   width: 80%;
@@ -241,17 +278,14 @@ ul.groene-vinkjes li::before {
 
 /*Pillars Page START*/
 
-.projects,
-ul,
-li {
-  margin-top: 4px;
-  color: #fff;
-}
+
 .projects,
 ul {
   list-style-type: none;
   margin-top: 1rem;
   padding-left: 0;
+  margin-top: 4px;
+  color: #fff;
 }
 
 .projects {
@@ -424,6 +458,37 @@ figcaption {
     height: 20px;
 }
 
+/*Carousel Arrows Start*/
+.carousel-controls {
+  position: absolute;
+  width: 100%;
+  top: 115%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 900;
+  pointer-events: auto;
+}
+
+.carousel-btn {
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.314);
+  color: white;
+  /*border: 2px solid #4effa8; */
+  border-radius: 10%;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /*background: linear-gradient(185deg, #0281e2, #f4f3f5); */
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/*Carousel Arrows END*/
+
+
 @media (max-width: 1024px) {
   .scene {
     width: 100%;
@@ -441,18 +506,25 @@ figcaption {
 }
 
 @media (max-width: 768px) {
+  /*ADDED THIS EXTRA for Vertical Stacking END*/
+  .about-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /*ADDED THIS EXTRA for Vertical Stacking START*/
   .scene {
     height: 300px;
   }
 
   .carousel {
-    transform: scale(0.9); /* iets kleiner geheel */
+    transform: scale(0.9);
   }
 
   .card {
     width: 120px;
     height: 160px;
-    margin: 0; /* voorkom extra ruimte */
+    margin: 0; 
   }
 
   .card h3 {

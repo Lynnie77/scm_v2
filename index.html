@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="The main page for all Sacred Ministry">
     <meta name="keywords" content="eugene, oregon, herb, sacred, ministry, shop">    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="reset" href="css/reset.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
        <!-----Thumbnail Image In Browser---Start---------->
@@ -17,7 +17,22 @@
     <title>Sacred Ministry - Home</title>
 </head>
 <body>
-    <div class="main_wrapper">
+
+  <!--NAV BAR HAMBURGER START-->
+<header class="navbar">
+  <div class="logo">SCM</div>
+  <button class="hamburger" id="hamburger">&#9776;</button>
+  <nav class="nav-links" id="navLinks">
+    <a href="#card1">About</a>
+    <a href="#card2">Services</a>
+    <a href="#card3">Pillars</a>
+    <a href="#card4">Membership</a>
+    <a href="#card5">Contact</a>
+  </nav>
+</header>
+<!--NAV BAR HAMBURGER END-->
+
+    <main class="main_wrapper">
 <div class="title_logo">
     <h2>Sacred Connections Ministry</h2>
 </div>
@@ -59,18 +74,26 @@
     <!-- Card5 END-->
 
   </div>
+<!--Carousel Toggle BUTTONS START-->
+<div class="carousel-controls">
+  <button class="carousel-btn" id="prevBtn">&#10094;</button>
+  <button class="carousel-btn" id="nextBtn">&#10095;</button>
 </div>
+<!--Carousel Toggle BUTTONS END-->
+
+
 </div>
+</main>
 
 
 <div id="popup-card1" class="popup">
   <div class="about-inner">
-    <h2>About</h2>
+    <h2 id="popup-title-about">About</h2>
     <div class="about-flex">
       <div class="about-left"><img src="https://iili.io/3QhBH2R.jpg" alt="About"></div>
       <div class="about-right">
         Sacred Connections Ministry is a non-profit organization that is committed to our
-        community living in their highest selves.,
+        community living in their highest selves.
       </div>
     </div>
 
@@ -167,11 +190,13 @@
   <div class="social_media_grid">
     <a href="https://www.facebook.com/sacredconnectionsministry"><img class="fb_logo" src="logo/Facebook_f_logo_(2021).svg.png"></a>
     <a href="https://www.instagram.com/sacred_connections_ministry/"><img class="instagram_logo" src="logo/500px-Instagram_logo_2022.svg.png"></a>
-    <a><img></a>
+    <!-- <a><img></a> -->
     
   </div>
 </div>
 
+
+<script src="js/hamburger.js"></script>
 <script src="js/carousel.js"></script>
 <script src="js/contact_submit_btn.js"></script>
 <!--<script src="js/main.js"></script> -->
