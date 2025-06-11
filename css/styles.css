@@ -49,22 +49,88 @@ h3 {
   -webkit-text-fill-color: transparent;
 }
 
-/*ADDED NAV BAR AND HEADER START*/
-header{
-  position: absolute;
-  top: -40%;
-  left: 55%;
+.main_wrapper{
+  display: grid;
+  width: 1400px;
+  height: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 55px 10px 420px 80px;
+ /* background-color: #0281e2; */ 
+  justify-items: center;
+  align-items: center;
+  row-gap: 20px;
 }
 
+/*ADDED NAV BAR AND HEADER Hamurger START*/
+header{
+  width: 100%;
+  height:50px;
+}
+
+/* Position and style navbar */
 .navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 1000;
 }
 
+/* Hamburger Button Styles */
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 4px;
+  background-color: #ff05f2;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px #ff05f2, 0 0 20px #0281e2;
+}
+
+/* Animation for open state */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Nav menu */
 .nav-links {
   display: none;
   flex-direction: column;
   gap: 10px;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1rem;
+  border: 1px solid #0281e2;
+  border-radius: 8px;
+  position: absolute;
+  top: 100%;
+  right: 2rem;
+  z-index: 1050;
+  box-shadow: 0 0 10px #0281e2, 0 0 20px #0281e2;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .nav-links a {
@@ -73,17 +139,22 @@ header{
   font-weight: bold;
 }
 
-.hamburger {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-}
-
-.nav-active {
+/* Show nav when active */
+.nav-links.nav-active {
   display: flex;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /*NAV BAR AND HEADER END*/
 
 .scene {
@@ -459,17 +530,26 @@ figcaption {
 }
 
 /*Carousel Arrows Start*/
+/*
 .carousel-controls {
   position: absolute;
-  width: 100%;
   top: 115%;
+  width: 200px;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   padding: 0 40px;
   z-index: 900;
   pointer-events: auto;
+  margin: 0 auto;
+}*/
+.carousel-controls {
+  display: flex;
+  width: 200px;
+  padding: 0 40px;
+  margin: 0 auto;
 }
+
 
 .carousel-btn {
   font-size: 1.5rem;
