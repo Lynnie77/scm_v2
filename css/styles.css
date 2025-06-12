@@ -68,10 +68,26 @@ header{
   position: relative;
   z-index: 1000;
 }
-.logo{
+#logo{
   margin-left: 50px;
+  font-family: monospace;
+  font-size: 20px;
+  white-space: nowrap;
+  position: relative; /* Make #logo a positioning context for the cursor */
 }
-
+/*
+.char {
+  display: inline-block; /* Ensure characters are inline for correct offset calculations */
+/*
+}
+*/
+/*Styles The Typewriter Effect The Blinking '|' */
+.cursor {
+  display: inline-block;
+  position: absolute; /* Position cursor relative to #logo */
+  top: 0;
+  transition: left 0.1s ease; /* Smooth cursor movement */
+}
 /* Hamburger Button Styles */
 .hamburger {
   width: 30px;
