@@ -5,7 +5,7 @@ document.getElementById("prevBtn").addEventListener("click", () => {
   setCardPositions();
   stopRotation(); // optional
   isPaused = true;
-  pauseBtn.textContent = "▶ Resume";
+  pauseBtn.textContent = "▶";
 });
 
 document.getElementById("nextBtn").addEventListener("click", () => {
@@ -13,27 +13,24 @@ document.getElementById("nextBtn").addEventListener("click", () => {
   setCardPositions();
   stopRotation(); // optional
   isPaused = true;
-  pauseBtn.textContent = "▶ Resume";
+  pauseBtn.textContent = "▶";
 });
-
 //Next BTNS For Carousel END
 
 
 // PAUSE BUTTON START
-// Pause Button Logic START
 const pauseBtn = document.getElementById("pauseBtn");
 let isPaused = false;
 
 pauseBtn.addEventListener("click", () => {
   if (isPaused) {
     startRotation();
-    pauseBtn.textContent = "⏸ Pause";
+    pauseBtn.textContent = "⏸";
   } else {
     stopRotation();
-    pauseBtn.textContent = "▶ Resume";
+    pauseBtn.textContent = "▶";
   }
   isPaused = !isPaused;
 });
-// Pause Button Logic END
 
 //PAUSE BUTTON END
