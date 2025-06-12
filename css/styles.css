@@ -559,6 +559,75 @@ figcaption {
 /*Carousel Arrows END*/
 
 
+/*SIDEBAR START*/
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 9999;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Sidebar content */
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Open Sidebar Button (☰) */
+.open-sidebar {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #111;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+/* Close Button inside sidebar */
+.close-sidebar {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  float: right;
+  cursor: pointer;
+}
+
+/*SIDEBAR END*/
+
+
 @media (max-width: 1024px) {
   .scene {
     width: 100%;
