@@ -10,14 +10,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FBDT4QH7FZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FBDT4QH7FZ');
 </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,13 +25,16 @@
     <title>Sacred connections Ministry Shopping Page</title>
 </head> 
     <body>
-        <section>
+        
 
         	<!-------------Nav--Icons--Start---------------------------->	
             <header>
                 <div class="logo_grid">
-                    <div id="logo"><a href="index.html"><p>SacredConnectionsMinistry.com</p></a></div>
-                    <h1 id="page_title">Shop</h1>
+                  
+                  <a id="header_logo" href="index.html"><img src="logo/scm_logo_high_res_og_no_bkgd-01.svg"></a>
+                    
+                  <div><h1 id="page_title"></h1></div>
+                    
                 </div>
                 <nav class="nav">
                 <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -51,7 +46,6 @@
                         <li><a href="index.html"><div data-tooltip="Home Page" class="box box0"></div><p>Home</p></a></li>
                         <li><a href="https://www.facebook.com/sacredconnectionsministry"><div data-tooltip="Facebook" class="box box1"></div><p>Facebook</p></a></li>		
                         <li><a href="https://www.instagram.com/sacred_connections_ministry/"><div data-tooltip="Instagram" class="box box4"></div><p>Instagram</p></a></li>
-                        <li><a href="sprout.html"><div data-tooltip="Shop Sprouts" class="box box5"></div><p>Sprout</p></a></li>
                         <li><a href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-12637"><div data-tooltip="Donate" class="box box3"></div><p>Donate</p></a></li>
                     </ul>
                 </nav>
@@ -165,11 +159,50 @@
     <div class="amazon_disclaimer"> <h3>On Certain Products We Are Amazon Associates, As An Amazon Associate, I Earn From Qualifying Purchases FYI</h3> </div>
     <br>
     <a href="blogs/disclaimer.html" class="disclaimer">DISCLAIMER</a>
-</section>
+
+<!-- Sidebar START-->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-content">
+    <a id="sidebar_logo" href="index.html"><img class="sidebar_logo" src="logo/scm_logo_high_res_og_no_bkgd-01.svg"></a>
+    
+    <a class="sidebar-link" href="/#card1">
+      <span class="icon">🏠</span>
+      <span class="text">About</span>
+    </a>
+    <a class="sidebar-link" href="/#card2">
+      <span class="icon">🛠️</span>
+      <span class="text">Services</span>
+    </a>
+    <a class="sidebar-link" href="/#card3">
+      <span class="icon">📌</span>
+      <span class="text">Pillars</span>
+    </a>
+    <a class="sidebar-link" href="/#card4">
+      <span class="icon">👥</span>
+      <span class="text">Membership</span>
+    </a>
+    <a class="sidebar-link" href="/#card5">
+      <span class="icon">✉️</span>
+      <span class="text">Contact</span>
+    </a>
+    
+    <a class="sidebar-link" href="shop.html">
+      <span class="icon">🛒</span>
+      <span class="text">Shop</span>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar Toggle Icon -->
+<!--SIDEBAR END--->
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
 <script src="js/typewriter.js"></script>
-    <script src="js/hamburger.js"></script>
+    <script src="js/shop_hamburger.js"></script>
     
 </body>
 </html>

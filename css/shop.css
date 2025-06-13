@@ -15,6 +15,7 @@
     --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
     --text-1: #eaf9fa;
     --text-2: #555555;
+	--text-3: #ffffff;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
     font-size: 16px;
@@ -31,11 +32,12 @@ body{
 	background-color: var(--bg-secondary);
 	margin: 0 auto;	
 	text-align: center;
-	padding: 1%;
+	/*padding: 5px; */
 	padding-top: 0;
 }
 
 /****Main Background Section Behind Content and Nav*****/
+/*
 section{
 	background-position: center;
 	height: 100%;
@@ -45,14 +47,14 @@ section{
     margin: 0 auto;
 	margin-top: 1px;
 	margin-bottom: 10px;
-	padding: 0 1% 10px 1%; /***Space inbetween Main Grid Container - Nav - Grid Space***/
+	padding: 0 1% 10px 1%; 
 	border-radius: 10px;
     box-shadow: 0 0 10px black;
-}
+}*/
 
 header{
 	display: grid;
-	height: 65px;
+	height: 50px;
 	max-width: 100%;
 	margin: 0 auto;
 	grid-template-columns: 1fr auto auto;
@@ -63,7 +65,14 @@ header{
 	justify-content: center;
 	align-content: center;
 	background-color: var(--bg-primary);
+	 background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 10px black;
+}
+#header_logo img{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	box-shadow: none;
 }
 
 #nav-links li{
@@ -81,25 +90,25 @@ h4{
 h3{
 	color: #ddd;
 }
-/***Shop Harmonicas Text*****/
+/***Typewriter Text*****/ /**
 h1{
-	/** margin: 1% 0 1% 0; **/
-	 color: #ddd;
-	 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	 font-size: 2em;
-	 text-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+	 margin: 1% 0 1% 0; 
+	 color: var(--text-1);
+	 font-family: monospace;
+	 font-size: 20px;
+	 text-shadow: 10px 10px 30px rgba(0,0,0,0.1); 
 	 grid-column: 1/3;
 	 grid-row:1;
-	 -webkit-text-fill-color: var(--contrast-color);
+	  -webkit-text-fill-color: var(--text-1);
 	 -webkit-text-stroke-color: #ad097e;
-	 -webkit-text-stroke-width: .02rem;
-	 stroke: solid;
-	 text-shadow: 1px 5px 16px #02070a;
+	-webkit-text-stroke-width: .02rem; 
+	 stroke: solid;*/
+	 /*text-shadow: 1px 5px 16px #02070a;
 	 text-align: center;
 	 margin:0 auto;
 	 align-self: center;
 	 grid-column: 1;
- }
+ }**/
 
  p{
 	 font-size: 16px;
@@ -137,9 +146,13 @@ h1{
 
 .logo_grid{
 	display: grid;
+	height: 100%;
 	width: 100%;
-	grid-template-columns: 1fr;
-	grid-template-rows: 20px 45px;
+	grid-template-columns: 50px auto;
+	grid-template-rows: 1fr; 
+	align-items: center;
+	margin: 0 auto;
+	
 }
 
 #logo{
@@ -162,6 +175,13 @@ h1{
 #page_title_solar, #page_title_sprout, #page_title_music, #page_title{
 	grid-row: 2;
 }
+
+/*Says something like Sacred Connections Ministry*/
+#page_title{
+	margin: 0;
+	margin-left: 10px;
+}
+
 .box{
 	border-radius: 10px;
 	background-position: center;
@@ -174,8 +194,8 @@ h1{
 }
 
 .box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7 {
-	height: 30px;
-	width: 30px;
+	height: 20px;
+	width: 20px;
 	margin: 0 auto;
 	box-shadow: 2px 2px 2px 2px rgb(26, 26, 26); 
 	border-width:2px;
@@ -249,11 +269,9 @@ h1{
 .box0{background-image: url(../logo/scm_logo_high_res_og_no_bkgd-01.svg);}
 .box1{background-image: url(../logo/Facebook_f_logo_\(2021\).svg.png);}
 .box2{background-image: url(../images/chat-icon.svg);}
-.box3{background-image: url(../images/taco.svg);}
+.box3{background-image: url(../images/cash_giving_icon.svg);}
 .box4{background-image: url(../logo/500px-Instagram_logo_2022.svg.png);}
-.box5{background-image: url(../images/seedling-emoji.png);}
-.box6{background-image: url(../images/music-note-blue-bkgd.svg);}	  
-.box7{background-image: url(../svg/moop_logo_anima_recycle_logo_01.svg);}
+
 img{
 	width: 100%;
 	border-radius: 10px;
@@ -325,6 +343,7 @@ ul ul li{
 	grid-column-gap: 20px;
 	padding: 1em 1% 1em 1%; /***Space Between Card & Outer Grid****/ 
 	margin: 0 auto;
+	margin-left: 70px;
 	text-align: center;
 	justify-content: center;
 	border-radius: 10px;
@@ -467,9 +486,77 @@ ul ul li{
 	font-size: 16px;
 }
 .end {
-	color: red;
-	font-size: 32px;
+	color: var(--text-1);
+	font-size: 20px;
+	float: left;
+	font-family: monospace;
+	font-weight: 100;
+	margin-left: 20px;
 }
+
+
+/*SIDEBAR START*/
+/* Sidebar base (collapsed) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #111;
+  color: var(--text-3);
+  transition: width 0.3s ease;
+  z-index: 9999;
+  overflow-x: hidden;
+}
+
+.sidebar_logo{
+  max-width: 60px;
+  max-height: 60px;
+}
+
+/* Expand on hover */
+.sidebar:hover {
+  width: 250px;
+}
+
+/* Sidebar link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--text-3);
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #222;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Icon always visible */
+.sidebar-link .icon {
+  font-size: 20px;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Hide text when not hovering */
+.sidebar:not(:hover) .text {
+  display: none;
+}
+.text{
+  padding-top: 5px;
+}
+/*SIDEBAR END*/
+
+
+
+
 @media screen and (max-width: 1275px){
 #logo{
     cursor: pointer;
