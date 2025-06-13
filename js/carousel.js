@@ -5,16 +5,16 @@ const totalCards = cards.length;
 let rotationInterval = null;
 let isPopupOpen = false;
 
-// Dynamische stappen en afstand op basis van scherm
+// === RESPONSIVE SETTINGS ===
 function getResponsiveSettings() {
   const width = window.innerWidth;
-
-  if (width <= 400) return { rotationStep: 45, radius: 160 }; // Zeer compact
-  if (width <= 600) return { rotationStep: 50, radius: 200 }; // Mobiel
+  if (width <= 400) return { rotationStep: 45, radius: 160 }; // Very small
+  if (width <= 600) return { rotationStep: 50, radius: 200 }; // Mobile
   if (width <= 768) return { rotationStep: 60, radius: 260 }; // Tablet
   return { rotationStep: 72, radius: 350 }; // Desktop
 }
 
+// === CARD TRANSFORMS ===
 function setCardPositions() {
   const { rotationStep, radius } = getResponsiveSettings();
   cards.forEach((card, i) => {
@@ -24,7 +24,7 @@ function setCardPositions() {
     const z = Math.cos(angleRad) * radius;
     card.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg)`;
   });
-  rotateCarousel(); // herbereken rotatiehoek bij aanpassing
+  rotateCarousel();
   updateCardSize();
 }
 
@@ -47,8 +47,9 @@ function rotateCarousel() {
   carousel.style.transform = `rotateY(${rotateDeg}deg)`;
 }
 
+// === ROTATION CONTROL ===
 function startRotation() {
-  if (rotationInterval || isPopupOpen) return;
+  if (rotationInterval || isPopupOpen || window.innerWidth < 768) return;
   rotationInterval = setInterval(() => {
     currentCardIndex = (currentCardIndex + 1) % totalCards;
     setCardPositions();
@@ -62,22 +63,21 @@ function stopRotation() {
   }
 }
 
+// === INTERACTIONS ===
 carousel.addEventListener("mouseover", () => {
   if (!isPopupOpen) stopRotation();
 });
-
 carousel.addEventListener("mouseout", () => {
   if (!isPopupOpen) startRotation();
 });
-
 carousel.addEventListener("touchstart", () => {
   if (!isPopupOpen) stopRotation();
 });
-
 carousel.addEventListener("touchend", () => {
   if (!isPopupOpen) startRotation();
 });
 
+// === POPUP ===
 function showPopup(cardId) {
   const popup = document.getElementById(`popup-${cardId}`);
   if (popup) {
@@ -95,6 +95,7 @@ function closePopup() {
   startRotation();
 }
 
+// === CARD CLICK ===
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     const cardId = card.dataset.id;
@@ -102,12 +103,26 @@ cards.forEach((card) => {
   });
 });
 
+// === MOBILE-CARDS POPUP SUPPORT ===
+document.querySelectorAll(".mobile-cards .card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const cardId = card.dataset.id;
+    showPopup(cardId);
+  });
+});
 
+// === INIT & RESIZE ===
+function initCarousel() {
+  if (window.innerWidth < 768) {
+    stopRotation();
+    return;
+  }
+  setCardPositions();
+  startRotation();
+}
 
-// Init + resize support
-setCardPositions();
-startRotation();
+initCarousel();
 
 window.addEventListener("resize", () => {
-  setCardPositions(); // opnieuw positioneren bij vensterverandering
+  initCarousel();
 });
