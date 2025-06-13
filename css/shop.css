@@ -448,6 +448,11 @@ ul ul li{
 	width: 50%;
 }
 
+.sacred_elixer .img_item{
+    width: 160px;
+    height: 160px;
+}
+
 /***Amazon Discalimer For Amazon Products***/
 .amazon_disclaimer{
 	align-items: center;
