@@ -52,7 +52,9 @@
     <a href="#card3">Pillars</a>
     <a href="#card4">Membership</a>
     <a href="#card5">Contact</a>
+    <a id="shop_nav" href="shop.html">Shop</a>
   </nav>
+  
 </header>
 <!--NAV BAR HAMBURGER END-->
 
@@ -96,6 +98,14 @@
     </div>
     <!-- Card5 END-->
 
+    <!-- Card6 START-->
+     <!--
+    <div class="card" id="card6" data-id="card6">
+      <img src="https://iili.io/3Qhqyrv.jpg" alt="Shop">
+      <h3>Shop</h3>
+    </div> -->
+    <!-- Card6 END-->
+
   </div>
   </div>
 <!--Carousel Toggle BUTTONS START-->
@@ -107,7 +117,7 @@
 <!--Carousel Toggle BUTTONS END-->
 
 <!-- Mobile Card Layout START -->
-<div class="mobile-cards" id="mobileCards">
+<div class="mobile-cards-wrapper" id="mobileCards">
   <div class="mobile-card" data-id="card1">
     <img src="https://iili.io/3QhqLmP.jpg" alt="About">
     <h3>About</h3>
@@ -198,7 +208,7 @@
 </div>
 <!---Pillars Card3 End--->
 <div id="popup-card4" class="popup">
-  <h2>Affirmations</h2>
+  <h2>Membership</h2>
 
   <div class="work health">
     <p><strong>I AM</strong> a vessel of peace-grounded, grateful, and open to creative flow.</p>
@@ -213,7 +223,7 @@
   </div>
 
   <div class="work fitness">
-    <p><strong>I AM</strong> a radiant soul-reflecting divine energy and truth in every step I take.</p>
+    <p><strong>Signup</strong> <a href="https://us.services.docusign.net/webforms-ux/v1.0/forms/a5ccb1c2a23d53d4a787c414c9a3d9cb">Become A Member Today</a> </p>
 </div>
   <button class="popup-close" onclick="closePopup()">Close</button>
 </div>
@@ -222,15 +232,21 @@
   <h2>Contact</h2>
   <!--<h4 class="touch">Get in touch with us</h4> -->
   <!--contact form -->
-  <form id="contact-form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message"></textarea><br><br>
-    <input type="submit" value="Send" onclick="sendEmail()">
-  </form>
+<form id="contact-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" required></textarea><br><br>
+
+  <input type="submit" value="Send">
+</form>
+
+
+
   <div class="scm_contact_info_grid">
     <h2>SCM</h2>
     <p>810 W 3rd Ave</p>
@@ -242,7 +258,6 @@
   <div class="social_media_grid">
     <a href="https://www.facebook.com/sacredconnectionsministry"><img class="fb_logo" src="logo/Facebook_f_logo_(2021).svg.png"></a>
     <a href="https://www.instagram.com/sacred_connections_ministry/"><img class="instagram_logo" src="logo/500px-Instagram_logo_2022.svg.png"></a>
-    <!-- <a><img></a> -->
   </div>
 </div>
 
@@ -272,7 +287,8 @@
       <span class="icon">✉️</span>
       <span class="text">Contact</span>
     </a>
-    <a class="sidebar-link" href="#card6">
+    
+    <a class="sidebar-link" href="shop.html">
       <span class="icon">🛒</span>
       <span class="text">Shop</span>
     </a>

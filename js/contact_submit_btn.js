@@ -8,10 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    if (!name || !email || !message) {
-      alert("Please fill in all fields.");
-      return;
-    }
+    if (!name || !email || !message) return;
 
     const subject = "Contact Form Submission";
     const body = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;

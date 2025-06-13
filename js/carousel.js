@@ -103,8 +103,8 @@ cards.forEach((card) => {
   });
 });
 
-// === MOBILE-CARDS POPUP SUPPORT ===
-document.querySelectorAll(".mobile-cards .card").forEach((card) => {
+// === mobile-cards-wrapper POPUP SUPPORT ===
+document.querySelectorAll(".mobile-cards-wrapper .card").forEach((card) => {
   card.addEventListener("click", () => {
     const cardId = card.dataset.id;
     showPopup(cardId);

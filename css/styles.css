@@ -19,6 +19,17 @@
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     --transition-speed: 600ms;
+
+    /*Pillar Quote Colors*/
+    --pillar-color-1: purple;
+    --pillar-color-2: rgb(96, 0, 128);
+    --pillar-color-3: rgb(98, 0, 173);
+    --pillar-color-4: rgb(2, 130, 81);
+    --pillar-color-5: rgb(235, 202, 17);
+    --pillar-color-6: rgb(235, 141, 17);
+    --pillar-color-7: purple;
+    --pillar-text-shadow: rgb(99, 95, 95);
+
 }
 
 body {
@@ -500,37 +511,37 @@ figcaption {
 }
 .pillars_card_text_ul li{
     font-weight: bold;
-    text-shadow: 1px 1px 1px #cfcece;
+    text-shadow: 1px 1px 1px var(--pillar-text-shadow);
 }
 .pillars_card_text_ul p{
     font-size: 14px;
     margin-top: 2px;
-    text-shadow: 1px 1px 1px #cfcece;
+    text-shadow: 1px 1px 1px var(--pillar-text-shadow);
 }
 .pillars_card_text_ul li{
     text-align: center;
 }
 .integrity_title, p.integrity_text {
-    color: purple;
+    color: var(--pillar-color-1);
 }
 
 .community_title,  p.community_text{
-    color:rgb(96, 0, 128);
+    color: var(--pillar-color-2);
 }
 .responsibility_title, p.responsibility_text{
-    color:rgb(98, 0, 173);
+    color: var(--pillar-color-3);
 }
 .change_title, p.change_text{
-    color:rgb(2, 130, 81);
+    color: var(--pillar-color-4);
 }
 .abundance_title, p.abundance_text{
-    color:rgb(235, 202, 17);
+    color: var(--pillar-color-5);
 }
 .wealth_title, p.wealth_text{
-    color:rgb(235, 141, 17);
+    color: var(--pillar-color-6);
 }
 .gratitude_title, p.gratitude_text{
-    color:rgb(235, 39, 17);
+    color: var(--pillar-color-7);
 }
 /**/
 
@@ -551,7 +562,7 @@ figcaption {
     grid-template-rows: 30px 25px 25px 25px 50px;
     column-gap: 5px;
 }
-
+ 
 /*social media logos*/
 .fb_logo, .instagram_logo{
     width: 20px;
@@ -657,7 +668,7 @@ figcaption {
 /*SIDEBAR END*/
 
 /*CARDS SECTION FOR CAROUSEL TO CHANGE TO MOBILE START*/
-.mobile-cards {
+.mobile-cards-wrapper {
   display: none;
 }
 
@@ -667,7 +678,7 @@ figcaption {
   display: none !important;
 }
 
-.mobile-cards {
+.mobile-cards-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
     overflow-x: auto;
