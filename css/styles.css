@@ -595,6 +595,9 @@ figcaption {
 .carousel-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+#pauseBtn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 #pauseBtn{
   color: var(--text-4);

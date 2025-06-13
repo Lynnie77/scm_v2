@@ -7,7 +7,7 @@
 :root {
     --primary-color: #003366;
     --secondary-color: #f9f9f9;
-    --accent-color: rgb(238, 28, 175); 
+    --accent-color: #ff05f2; 
     --bkgd-color: #ffffff;
     --card-bkgd: #f9f9f9;
     --bg-primary: #23232e;
@@ -62,7 +62,7 @@ header{
 	padding: 3px;
 	justify-content: center;
 	align-content: center;
-	background-color: #24252A;
+	background-color: var(--bg-primary);
     box-shadow: 0 0 10px black;
 }
 
@@ -195,9 +195,10 @@ h1{
 
 .box:hover{	
 	border-style: solid;
-	background-color: hotpink;
+	background-color: var(--secondary-color);
 	border-width:4px;
 	border-color: #DCF506;
+	border-color: var(--contrast-color);
 }
 
 .box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover  {
@@ -327,7 +328,8 @@ ul ul li{
 	text-align: center;
 	justify-content: center;
 	border-radius: 10px;
-	background-color: #0075D9;
+	/*background-color: #0075D9;*/
+	background-color: var(--bg-primary);
 	box-shadow: 0 0 10px black;
 	text-shadow: 1px 1px 2px #7dabd2;
 }
@@ -339,7 +341,7 @@ ul ul li{
 	border-style: solid;
 	border-width:4px;
 	border-color: #3aad09;
-	border-color: #ad097e;
+	border-color: var(--accent-color);
 	border-radius: 20px;
 }
 
