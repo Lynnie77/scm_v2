@@ -12,6 +12,7 @@
     --card-bkgd: #f9f9f9;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
+	--bgkd-dark: rgba(0, 0, 0, 0.8);
     --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
     --text-1: #eaf9fa;
     --text-2: #555555;
@@ -35,7 +36,10 @@ body{
 	/*padding: 5px; */
 	padding-top: 0;
 }
-
+body{
+	max-width: 1600px;
+	margin: 0 auto;
+}
 /****Main Background Section Behind Content and Nav*****/
 /*
 section{
@@ -65,7 +69,7 @@ header{
 	justify-content: center;
 	align-content: center;
 	background-color: var(--bg-primary);
-	 background-color: rgba(0, 0, 0, 0.8);
+	 background-color: var(--bgkd-dark);
     box-shadow: 0 0 10px black;
 }
 #header_logo img{
@@ -193,7 +197,7 @@ h1{
 	background-color: #ddd;
 }
 
-.box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7 {
+.box0, .box1, .box2, .box3, .box4{
 	height: 20px;
 	width: 20px;
 	margin: 0 auto;
@@ -202,11 +206,11 @@ h1{
 	border-color: #0075D9;
 }
  
-.box0:active, .box1:active, .box2:active, .box3:active, .box4:active, .box5:active, .box6:active, .box7:active {
+.box0:active, .box1:active, .box2:active, .box3:active, .box4:active{
 	height: 30px;
 	width: 30px;
 }
-.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover {
+.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover{
 	border-style: solid;
 	background-color: hotpink;
 	border-width:2px;
@@ -221,13 +225,13 @@ h1{
 	border-color: var(--contrast-color);
 }
 
-.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover  {
+.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover{
 	border-width:2px;
 	border-color: #DCF506;
 }
 
 /**Tooltip Popup Explains What Tab Is START**/
-.box0::before, .box1::before, .box2::before, .box3::before, .box4::before, .box5::before, .box6::before, .box7::before{
+.box0::before, .box1::before, .box2::before, .box3::before, .box4::before{
 	content: attr(data-tooltip);
 	position: absolute;
 	background-color: #23232e84;
@@ -242,11 +246,11 @@ h1{
 	margin-left: 15px;
 	
 }
-.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover{
+.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover{
 	background-color: var(--accent-color);
 	fill: #ddd;
 }
-.box0::after, .box1::after, .box2::after, .box3::after, .box4::after, .box5::after, .box6::after, .box7::after{
+.box0::after, .box1::after, .box2::after, .box3::after, .box4::after{
 	content: '';
 	position: absolute;
 	height: 0;
@@ -255,11 +259,11 @@ h1{
 	opacity: 0;
 	transition: 200ms cubic-bezier(.42,0,.44,1.68);
 }
-.box0:hover::before, .box1:hover::before, .box2:hover::before, .box3:hover::before, .box4:hover::before, .box5:hover::before, .box6:hover::before, .box7:hover::before{
+.box0:hover::before, .box1:hover::before, .box2:hover::before, .box3:hover::before, .box4:hover::before{
 	transform: translateY(0) rotate(0);
 	opacity: 1;
 }
-.box0:hover::after, .box1:hover::after, .box2:hover::after, .box3:hover::after, .box4:hover::after, .box5:hover::after .box6:hover::after, .box7:hover::after{
+.box0:hover::after, .box1:hover::after, .box2:hover::after, .box3:hover::after, .box4:hover::after{
 	transform: translateY(-42px) rotate(0);
 	opacity: 1;
 }
@@ -281,6 +285,9 @@ img{
 	box-shadow: 0 0 5px black;
 }
 /****Test dropdown START****/
+.dropdown{
+	background-color: none;
+}
 ul {
 	list-style: none;
 }
@@ -349,6 +356,7 @@ ul ul li{
 	border-radius: 10px;
 	/*background-color: #0075D9;*/
 	background-color: var(--bg-primary);
+	background-color: var(--bgkd-dark);
 	box-shadow: 0 0 10px black;
 	text-shadow: 1px 1px 2px #7dabd2;
 }
@@ -466,19 +474,12 @@ ul ul li{
 }
 
 .buy_now{
-	width: 50%;
+	width: 100px;
 }
 
 .sacred_elixer .img_item{
     width: 160px;
     height: 160px;
-}
-
-/***Amazon Discalimer For Amazon Products***/
-.amazon_disclaimer{
-	align-items: center;
-	justify-content: center;
-	margin-top: 10px;
 }
 
 .start {
@@ -513,6 +514,7 @@ ul ul li{
 .sidebar_logo{
   max-width: 60px;
   max-height: 60px;
+  box-shadow: none;
 }
 
 /* Expand on hover */
@@ -554,7 +556,29 @@ ul ul li{
 }
 /*SIDEBAR END*/
 
-
+.footer{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 40px) ;
+	width: 100%;
+	height: 180px;
+	font-size: 12px;
+	color: var(--text-1);
+	background-color: #111;
+	text-align: right;
+	align-items: center;
+}
+.footer ul{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr ;
+	text-align: center;
+	
+}
+.footer li{
+	padding-right: 5px;
+	
+}
 
 
 @media screen and (max-width: 1275px){
@@ -704,6 +728,81 @@ img.logo {
     }
 }
     /**NAV*BAR*END**/
+
+/*SIDEBAR START*/
+/* Sidebar base (collapsed) */
+@media (max-width: 767px) {
+/*#mobile_logo, .mobile_logo{
+  display: flex;
+  width: 50px;
+  height: 50px;
+}  
+*/
+.container{
+	margin-left: 0;
+}
+
+/*SCM Logo Thats In Sidebar*/
+#sidebar_logo, .sidebar_logo{
+  display: none;
+}
+
+.sidebar {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: auto;
+  z-index: 9999;
+  transition: none;
+}
+
+.sidebar:hover {
+  width: 100%;
+}
+
+.sidebar-content{
+  display: grid;
+  width: 98%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  justify-items: center;
+}
+
+.sidebar-link {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  font-size: 11px;
+  text-align: center;
+  gap: 0;
+  color: var(--accent-color);
+}
+
+.sidebar-link .icon {
+  font-size: 18px;
+}
+
+.sidebar:not(:hover) .text {
+  display: block;
+ }
+}
+/*SIDEBAR END*/
+
+
+/*****Media Queries***756px***/
+@media screen and (max-width: 756px) {
+.nav{
+	grid-gap: 15%;
+	}
+}	
 /*****Media Queries***655px***/
 @media screen and (max-width: 655px) {
 h1{
@@ -741,12 +840,15 @@ h4{
  }
 }
 
+
 /*****Media Queries***756px***/
-@media screen and (max-width: 756px) {
-.nav{
-	grid-gap: 15%;
-	}
+@media screen and (max-width: 427px) {
+.end{
+	font-size: 18px;
+ }
 }
+
+
 
 /*****Media Queries***660px***/
 @media screen and (max-width: 660px) {

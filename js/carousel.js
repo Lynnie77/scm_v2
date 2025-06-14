@@ -78,6 +78,7 @@ carousel.addEventListener("touchend", () => {
 });
 
 // === POPUP ===
+/*
 function showPopup(cardId) {
   const popup = document.getElementById(`popup-${cardId}`);
   if (popup) {
@@ -87,6 +88,7 @@ function showPopup(cardId) {
   }
 }
 
+
 function closePopup() {
   document.querySelectorAll(".popup").forEach((popup) => {
     popup.classList.remove("show");
@@ -94,6 +96,99 @@ function closePopup() {
   isPopupOpen = false;
   startRotation();
 }
+*/
+
+// === POPUP ===
+function showPopup(cardId, event) {
+  event.stopPropagation(); // Prevent click from reaching document listener
+  const popup = document.getElementById(`popup-${cardId}`);
+  if (popup) {
+    popup.classList.add("show");
+    isPopupOpen = true;
+    stopRotation();
+  }
+}
+
+// === OUTSIDE CLICK TO CLOSE POPUP ===
+document.addEventListener('click', function (event) {
+  const popups = document.querySelectorAll('.popup');
+  let clickedOutside = true;
+  popups.forEach(popup => {
+    if (popup.classList.contains('show') && popup.contains(event.target)) {
+      clickedOutside = false; // Click was inside a popup
+    }
+  });
+  if (clickedOutside && isPopupOpen) {
+    popups.forEach(popup => {
+      popup.classList.remove('show'); // Hide the popup
+    });
+    isPopupOpen = false;
+    if (window.innerWidth >= 768) {
+      startRotation(); // Resume carousel rotation on desktop
+    }
+  }
+});
+
+// === CARD CLICK ===
+cards.forEach((card) => {
+  card.addEventListener("click", (event) => {
+    const cardId = card.dataset.id;
+    showPopup(cardId, event); // Pass the event to stopPropagation
+  });
+});
+
+// === mobile-cards-wrapper POPUP SUPPORT ===
+document.querySelectorAll(".mobile-cards-wrapper .card").forEach((card) => {
+  card.addEventListener("click", (event) => {
+    const cardId = card.dataset.id;
+    showPopup(cardId, event); // Pass the event to stopPropagation
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('click', function (event) {
+  // Get all popup elements
+  const popups = document.querySelectorAll('.popup');
+
+  // Check if any popup is open and the click is outside all popups
+  let clickedOutside = true;
+  popups.forEach(popup => {
+    if (popup.classList.contains('show') && popup.contains(event.target)) {
+      clickedOutside = false; // Click was inside a popup
+    }
+  });
+
+  // If clicked outside and a popup is open, close all popups
+  if (clickedOutside && isPopupOpen) {
+    popups.forEach(popup => {
+      popup.classList.remove('show'); // Hide the popup
+    });
+    isPopupOpen = false; // Reset popup state
+    if (window.innerWidth >= 768) {
+      startRotation(); // Resume carousel rotation on desktop
+    }
+  }
+});
+
+
+
+
+
 
 // === CARD CLICK ===
 cards.forEach((card) => {
