@@ -3,18 +3,21 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
+	box-sizing: border-box;
 }
 :root {
     --primary-color: #003366;
     --secondary-color: #f9f9f9;
-    --accent-color: rgb(238, 28, 175); 
+    --accent-color: #ff05f2; 
     --bkgd-color: #ffffff;
     --card-bkgd: #f9f9f9;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
+	--bgkd-dark: rgba(0, 0, 0, 0.8);
     --box-shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
     --text-1: #eaf9fa;
     --text-2: #555555;
+	--text-3: #ffffff;
     --text-primary: #b6b6b6;
     --text-secondary: #ececec;
     font-size: 16px;
@@ -31,11 +34,15 @@ body{
 	background-color: var(--bg-secondary);
 	margin: 0 auto;	
 	text-align: center;
-	padding: 1%;
+	/*padding: 5px; */
 	padding-top: 0;
 }
-
+body{
+	max-width: 1600px;
+	margin: 0 auto;
+}
 /****Main Background Section Behind Content and Nav*****/
+/*
 section{
 	background-position: center;
 	height: 100%;
@@ -45,25 +52,31 @@ section{
     margin: 0 auto;
 	margin-top: 1px;
 	margin-bottom: 10px;
-	padding: 0 1% 10px 1%; /***Space inbetween Main Grid Container - Nav - Grid Space***/
+	padding: 0 1% 10px 1%; 
 	border-radius: 10px;
     box-shadow: 0 0 10px black;
-}
+}*/
 
 header{
 	display: grid;
-	height: 65px;
-	max-width: 100%;
+	height: 50px;
+	width: 100%;
 	margin: 0 auto;
-	grid-template-columns: 1fr auto auto;
+	grid-template-columns: 1fr auto 35px;
 	grid-auto-rows: repeat(1, minmax(80px, .4fr));
-	grid-gap: 2%;
+	grid-gap: 0;
 	text-align: center;
 	padding: 3px;
 	justify-content: center;
 	align-content: center;
-	background-color: #24252A;
+	background-color: var(--bgkd-dark);
     box-shadow: 0 0 10px black;
+}
+#header_logo img{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	box-shadow: none;
 }
 
 #nav-links li{
@@ -81,25 +94,6 @@ h4{
 h3{
 	color: #ddd;
 }
-/***Shop Harmonicas Text*****/
-h1{
-	/** margin: 1% 0 1% 0; **/
-	 color: #ddd;
-	 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	 font-size: 2em;
-	 text-shadow: 10px 10px 30px rgba(0,0,0,0.1);
-	 grid-column: 1/3;
-	 grid-row:1;
-	 -webkit-text-fill-color: var(--contrast-color);
-	 -webkit-text-stroke-color: #ad097e;
-	 -webkit-text-stroke-width: .02rem;
-	 stroke: solid;
-	 text-shadow: 1px 5px 16px #02070a;
-	 text-align: center;
-	 margin:0 auto;
-	 align-self: center;
-	 grid-column: 1;
- }
 
  p{
 	 font-size: 16px;
@@ -137,9 +131,13 @@ h1{
 
 .logo_grid{
 	display: grid;
+	height: 100%;
 	width: 100%;
-	grid-template-columns: 1fr;
-	grid-template-rows: 20px 45px;
+	grid-template-columns: 50px auto;
+	grid-template-rows: 1fr; 
+	align-items: center;
+	margin: 0 auto;
+	
 }
 
 #logo{
@@ -162,6 +160,13 @@ h1{
 #page_title_solar, #page_title_sprout, #page_title_music, #page_title{
 	grid-row: 2;
 }
+
+/*Says something like Sacred Connections Ministry*/
+#page_title{
+	margin: 0;
+	margin-left: 10px;
+}
+
 .box{
 	border-radius: 10px;
 	background-position: center;
@@ -173,20 +178,20 @@ h1{
 	background-color: #ddd;
 }
 
-.box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7 {
-	height: 30px;
-	width: 30px;
+.box0, .box1, .box2, .box3, .box4{
+	height: 20px;
+	width: 20px;
 	margin: 0 auto;
 	box-shadow: 2px 2px 2px 2px rgb(26, 26, 26); 
 	border-width:2px;
 	border-color: #0075D9;
 }
  
-.box0:active, .box1:active, .box2:active, .box3:active, .box4:active, .box5:active, .box6:active, .box7:active {
+.box0:active, .box1:active, .box2:active, .box3:active, .box4:active{
 	height: 30px;
 	width: 30px;
 }
-.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover {
+.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover{
 	border-style: solid;
 	background-color: hotpink;
 	border-width:2px;
@@ -195,18 +200,19 @@ h1{
 
 .box:hover{	
 	border-style: solid;
-	background-color: hotpink;
+	background-color: var(--secondary-color);
 	border-width:4px;
 	border-color: #DCF506;
+	border-color: var(--contrast-color);
 }
 
-.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover  {
+.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover{
 	border-width:2px;
 	border-color: #DCF506;
 }
 
 /**Tooltip Popup Explains What Tab Is START**/
-.box0::before, .box1::before, .box2::before, .box3::before, .box4::before, .box5::before, .box6::before, .box7::before{
+.box0::before, .box1::before, .box2::before, .box3::before, .box4::before{
 	content: attr(data-tooltip);
 	position: absolute;
 	background-color: #23232e84;
@@ -221,11 +227,11 @@ h1{
 	margin-left: 15px;
 	
 }
-.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover{
+.box0:hover, .box1:hover, .box2:hover, .box3:hover, .box4:hover{
 	background-color: var(--accent-color);
 	fill: #ddd;
 }
-.box0::after, .box1::after, .box2::after, .box3::after, .box4::after, .box5::after, .box6::after, .box7::after{
+.box0::after, .box1::after, .box2::after, .box3::after, .box4::after{
 	content: '';
 	position: absolute;
 	height: 0;
@@ -234,11 +240,11 @@ h1{
 	opacity: 0;
 	transition: 200ms cubic-bezier(.42,0,.44,1.68);
 }
-.box0:hover::before, .box1:hover::before, .box2:hover::before, .box3:hover::before, .box4:hover::before, .box5:hover::before, .box6:hover::before, .box7:hover::before{
+.box0:hover::before, .box1:hover::before, .box2:hover::before, .box3:hover::before, .box4:hover::before{
 	transform: translateY(0) rotate(0);
 	opacity: 1;
 }
-.box0:hover::after, .box1:hover::after, .box2:hover::after, .box3:hover::after, .box4:hover::after, .box5:hover::after .box6:hover::after, .box7:hover::after{
+.box0:hover::after, .box1:hover::after, .box2:hover::after, .box3:hover::after, .box4:hover::after{
 	transform: translateY(-42px) rotate(0);
 	opacity: 1;
 }
@@ -248,11 +254,9 @@ h1{
 .box0{background-image: url(../logo/scm_logo_high_res_og_no_bkgd-01.svg);}
 .box1{background-image: url(../logo/Facebook_f_logo_\(2021\).svg.png);}
 .box2{background-image: url(../images/chat-icon.svg);}
-.box3{background-image: url(../images/taco.svg);}
+.box3{background-image: url(../images/cash_giving_icon.svg);}
 .box4{background-image: url(../logo/500px-Instagram_logo_2022.svg.png);}
-.box5{background-image: url(../images/seedling-emoji.png);}
-.box6{background-image: url(../images/music-note-blue-bkgd.svg);}	  
-.box7{background-image: url(../svg/moop_logo_anima_recycle_logo_01.svg);}
+
 img{
 	width: 100%;
 	border-radius: 10px;
@@ -262,6 +266,9 @@ img{
 	box-shadow: 0 0 5px black;
 }
 /****Test dropdown START****/
+.dropdown{
+	background-color: none;
+}
 ul {
 	list-style: none;
 }
@@ -324,10 +331,13 @@ ul ul li{
 	grid-column-gap: 20px;
 	padding: 1em 1% 1em 1%; /***Space Between Card & Outer Grid****/ 
 	margin: 0 auto;
+	margin-left: 70px;
 	text-align: center;
 	justify-content: center;
 	border-radius: 10px;
-	background-color: #0075D9;
+	/*background-color: #0075D9;*/
+	background-color: var(--bg-primary);
+	background-color: var(--bgkd-dark);
 	box-shadow: 0 0 10px black;
 	text-shadow: 1px 1px 2px #7dabd2;
 }
@@ -339,7 +349,7 @@ ul ul li{
 	border-style: solid;
 	border-width:4px;
 	border-color: #3aad09;
-	border-color: #ad097e;
+	border-color: var(--accent-color);
 	border-radius: 20px;
 }
 
@@ -445,14 +455,12 @@ ul ul li{
 }
 
 .buy_now{
-	width: 50%;
+	width: 100px;
 }
 
-/***Amazon Discalimer For Amazon Products***/
-.amazon_disclaimer{
-	align-items: center;
-	justify-content: center;
-	margin-top: 10px;
+.sacred_elixer .img_item{
+    width: 160px;
+    height: 160px;
 }
 
 .start {
@@ -460,9 +468,99 @@ ul ul li{
 	font-size: 16px;
 }
 .end {
-	color: red;
-	font-size: 32px;
+	color: var(--text-1);
+	font-size: 20px;
+	float: left;
+	font-family: monospace;
+	font-weight: 100;
+	margin-left: 20px;
 }
+
+
+/*SIDEBAR START*/
+/* Sidebar base (collapsed) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #111;
+  color: var(--text-3);
+  transition: width 0.3s ease;
+  z-index: 9999;
+  overflow-x: hidden;
+}
+
+.sidebar_logo{
+  max-width: 60px;
+  max-height: 60px;
+  box-shadow: none;
+}
+
+/* Expand on hover */
+.sidebar:hover {
+  width: 250px;
+}
+
+/* Sidebar link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: var(--text-3);
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #222;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Icon always visible */
+.sidebar-link .icon {
+  font-size: 20px;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Hide text when not hovering */
+.sidebar:not(:hover) .text {
+  display: none;
+}
+.text{
+  padding-top: 5px;
+}
+/*SIDEBAR END*/
+
+footer{
+  width: 100%;
+  margin-bottom: 60px;
+}
+.footer ul {
+  display: flex;
+  list-style: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  float: right;
+  flex-direction: column;
+}
+
+.footer li {
+  display: flex;
+  width: 100px;
+  margin: 0 10px; /* Horizontal spacing between items */
+  justify-self: right;
+  font-size: 12px;
+  font-family: monospace;
+  text-decoration: underline;
+}
+
+
 @media screen and (max-width: 1275px){
 #logo{
     cursor: pointer;
@@ -610,6 +708,81 @@ img.logo {
     }
 }
     /**NAV*BAR*END**/
+
+/*SIDEBAR START*/
+/* Sidebar base (collapsed) */
+@media (max-width: 767px) {
+/*#mobile_logo, .mobile_logo{
+  display: flex;
+  width: 50px;
+  height: 50px;
+}  
+*/
+.container{
+	margin-left: 0;
+}
+
+/*SCM Logo Thats In Sidebar*/
+#sidebar_logo, .sidebar_logo{
+  display: none;
+}
+
+.sidebar {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: auto;
+  z-index: 9999;
+  transition: none;
+}
+
+.sidebar:hover {
+  width: 100%;
+}
+
+.sidebar-content{
+  display: grid;
+  width: 98%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  justify-items: center;
+}
+
+.sidebar-link {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  font-size: 11px;
+  text-align: center;
+  gap: 0;
+  color: var(--accent-color);
+}
+
+.sidebar-link .icon {
+  font-size: 18px;
+}
+
+.sidebar:not(:hover) .text {
+  display: block;
+ }
+}
+/*SIDEBAR END*/
+
+
+/*****Media Queries***756px***/
+@media screen and (max-width: 756px) {
+.nav{
+	grid-gap: 15%;
+	}
+}	
 /*****Media Queries***655px***/
 @media screen and (max-width: 655px) {
 h1{
@@ -647,12 +820,15 @@ h4{
  }
 }
 
+
 /*****Media Queries***756px***/
-@media screen and (max-width: 756px) {
-.nav{
-	grid-gap: 15%;
-	}
+@media screen and (max-width: 427px) {
+.end{
+	font-size: 18px;
+ }
 }
+
+
 
 /*****Media Queries***660px***/
 @media screen and (max-width: 660px) {
